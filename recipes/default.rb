@@ -22,6 +22,7 @@ end
 apt_repository "newrelic" do
   uri node["newrelic-sysmond"]["apt_uri"]
   components %w[newrelic non-free]
+  distribution ""
   key node["newrelic-sysmond"]["apt_key"]
   keyserver node["newrelic-sysmond"]["keyserver"]
   only_if { platform_family?("debian") }
